@@ -38,15 +38,17 @@ tina.penup()                            # Lift the pen up so we can move tina wi
 tina.forward(20)                        # Move tina forward by 20
 tina.left(90)                           # Turn tina left by 90 degrees
 tina.forward(20)                        # Move tina forward by 20
-tina.write("Why, hello there!")         # Write the message "Why, hello there!"
+tina.write("i am an EVIL TURTLE")         # Write the message "Why, hello there!"
 tina.backward(20)                       # Move tina backward by 20
 
 tina.goto(-50,0)
 tina.pendown()
+tina.write("hi hello")
 tina.color('red')                       # Set the color of tina to red
 tina.begin_fill()
 tina.circle(101, steps=50)
 tina.end_fill()
+tina.color('blue')
 
 turtle.exitonclick()                    # Close the window when we click on it
 

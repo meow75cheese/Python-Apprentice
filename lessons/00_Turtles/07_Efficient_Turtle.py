@@ -41,5 +41,21 @@ tina.forward(100)                                     # Move tina to another spo
 tina.pendown()
 draw_polygon(8)                        # Draw a hexagon
 
+tina.penup()
+
+tina.left(90)
+tina.forward(200)
+
+tina.pendown()
+draw_polygon(10)
+tina.penup()
+
+tina.left(90)
+tina.forward(320)
+tina.left(45)
+
+tina.pendown()
+draw_polygon(20)
+
 
 turtle.exitonclick()                     # Close the window when we click on it

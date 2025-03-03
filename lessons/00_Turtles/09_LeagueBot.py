@@ -17,4 +17,4 @@ screen.bgcolor('white')
 
 t = turtle.Turtle()
 
-... # Your Code Here
+set_turtle_image(t, "moustache1.gif")

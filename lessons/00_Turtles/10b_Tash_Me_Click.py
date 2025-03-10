@@ -40,15 +40,15 @@ def set_background_image(window, image_name):
     window.bgpic(image_path)
 
 set_turtle_image(t, "moustache1.gif")
-set_background_image(screen, "emoji.png")
+set_background_image(screen, "emoji.png") #🤔
 t.penup()
 t.left(90)
 t.forward(10)
 t.right(90)
 
-
 def meoew(x,y):
     t.goto(x,y)
+    t.write('\___/')
 
 screen.onclick(meoew)
 

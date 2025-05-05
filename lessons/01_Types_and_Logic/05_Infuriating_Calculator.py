@@ -28,12 +28,24 @@ window = Tk()
 # Hide the window, hint: use the withdraw method
 window.withdraw()
 # Ask the user for the first number   
-happy = 4
-food = 4
-active = 4
+
+def is_it_alive(yay,fed,run):
+   if yay < 1:
+      messagebox.showinfo('Oh no!',name+"'s happiness reached "+str(yay))
+   elif fed < 1:
+      messagebox.showinfo('Oh no!',name+"'s food reached "+str(fed))
+   elif run < 1:
+      messagebox.showinfo('Oh no!',name+"'s activity reached "+str(run))
+   else:
+      messagebox.showinfo(':)','you win')
+
+happy = 3
+food = 3
+active = 3
 pet = simpledialog.askstring('you have a pet CREATURE','write "cat" or "fish" or "bird" to choose your CREATURE')
 if pet == 'cat' or pet == 'fish' or pet == 'bird':
    name = simpledialog.askstring('name your '+pet,'what is its name?')
+   action = 1
    action1 = simpledialog.askstring('1/5: walk, pet, or feed '+name+'?','choose your first action')
    if action1 == 'walk':
       food = food - 1
@@ -45,11 +57,73 @@ if pet == 'cat' or pet == 'fish' or pet == 'bird':
    elif action1 == 'pet':
       happy = happy + 1
       active = active - 1
-      action2 = simpledialog.askstring('2/5: you pet your '+pet+ 'good job','walk, pet, or feed '+name+'?')
+      action2 = simpledialog.askstring('2/5: you pet your '+pet+' good job','walk, pet, or feed '+name+'?')
    elif action1 == 'feed':
       happy = happy - 1
       food = food + 1
       action2 = simpledialog.askstring('2/5: you fed '+name, 'walk, pet, or feed?')
+   # action 1 complete
+   action = 2
+   if action2 == 'walk':
+      food = food - 1
+      active = active + 1
+      if pet == 'fish':
+         action3 = simpledialog.askstring('3/5: why are you walking a fish??? but ok??','walk, pet, or feed '+name+'?')
+      else:
+         action3 = simpledialog.askstring('3/5: you took '+name+' on a walk','walk, pet, or feed?')
+   elif action2 == 'pet':
+      happy = happy + 1
+      active = active - 1
+      action3 = simpledialog.askstring('3/5: you pet your '+pet+' good job','walk, pet, or feed '+name+'?')
+   elif action2 == 'feed':
+      happy = happy - 1
+      food = food + 1
+      action3 = simpledialog.askstring('3/5: you fed '+name, 'walk, pet, or feed?')
+   # action 2 complete
+   action = 3
+   if action3 == 'walk':
+      food = food - 1
+      active = active + 1
+      if pet == 'fish':
+         action4 = simpledialog.askstring('4/5: why are you walking a fish??? but ok??','walk, pet, or feed '+name+'?')
+      else:
+         action4 = simpledialog.askstring('4/5: you took '+name+' on a walk','walk, pet, or feed?')
+   elif action3 == 'pet':
+      happy = happy + 1
+      active = active - 1
+      action4 = simpledialog.askstring('4/5: you pet your '+pet+' good job','walk, pet, or feed '+name+'?')
+   elif action3 == 'feed':
+      happy = happy - 1
+      food = food + 1
+      action4 = simpledialog.askstring('4/5: you fed '+name, 'walk, pet, or feed?')
+   # action 3 complete
+   action = 4
+   if action4 == 'walk':
+      food = food - 1
+      active = active + 1
+      if pet == 'fish':
+         action5 = simpledialog.askstring('5/5: why are you walking a fish??? but ok??','walk, pet, or feed '+name+'?')
+      else:
+         action5 = simpledialog.askstring('5/5: you took '+name+' on a walk','walk, pet, or feed?')
+   elif action4 == 'pet':
+      happy = happy + 1
+      active = active - 1
+      action5 = simpledialog.askstring('5/5: you pet your '+pet+' good job','walk, pet, or feed '+name+'?')
+   elif action4 == 'feed':
+      happy = happy - 1
+      food = food + 1
+      action5 = simpledialog.askstring('5/5: you fed '+name, 'walk, pet, or feed?')
+   if action5 == 'walk':
+      food = food - 1
+      active = active + 1
+   elif action5 == 'pet':
+      happy = happy + 1
+      active = active - 1
+   elif action5 == 'feed':
+      food = food + 1
+      happy = happy - 1
+   is_it_alive(happy,food,active)
+   
    
 else:
-   messagebox.showinfo('that is not an option','try again please')
+   messagebox.showinfo('that is not an option','restart the game to try again')
